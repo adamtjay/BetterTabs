@@ -1,0 +1,21 @@
+console.log('background running');
+
+// Array(18)
+//     0: "active"
+//     1: "audible"
+//     2: "autoDiscardable"
+//     3: "discarded"
+//     4: "favIconUrl"
+//     5: "height"
+//     6: "highlighted"
+//     7: "id"
+//     8: "incognito"
+//     9: "index"
+//     10: "mutedInfo"
+//     11: "pinned"
+//     12: "selected"
+//     13: "status"
+//     14: "title"
+//     15: "url"
+//     16: "width"
+//     17: "windowId"

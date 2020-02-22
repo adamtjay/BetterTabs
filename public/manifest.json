@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "TabViewer",
+  "description": "Helps you view & manage your tabs more easily.",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "TabViewer"
+  },
+  "icons": { "128": "icon_128.png" },
+  "content_security_policy": "script-src 'self' 'sha256-okoHgkV2XspzisgHjM4o43W4+8S/PAbgbzSFhfWsMSI='; object-src 'self'",  
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "storage"
+    ],
+    "background": {
+      "scripts": [
+        "js/background.js"
+      ]
+    }
+  }
