@@ -1,0 +1,10 @@
+// Mixins
+@import './mixins/mixins.scss';
+
+// Layout
+@import './layout/base.scss';
+
+// Components
+@import '../containers/MainWindow/MainWindow.scss';
+@import '../components/TabsView/TabsView.scss';
+@import '../components/Tab/Tab.scss';

@@ -1,0 +1,10 @@
+.main-window {
+  width: 100vw;
+  max-height: 100vh;
+  @include flex-column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 15px;
+  background-image: linear-gradient(to right, #fcfcfc, #c9c7c7);
+  color: #454545;
+}

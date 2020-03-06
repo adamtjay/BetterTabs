@@ -1,0 +1,5 @@
+.tabs-view {
+  @include flex-column;
+  align-items: center;
+  padding: 10px;
+}

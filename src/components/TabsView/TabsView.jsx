@@ -1,10 +1,7 @@
 import React, { Component } from "react";
+import Tab from '../Tab/Tab';
 
 export default class TabsView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     activeTabs: [],
     savedTabs: []
@@ -17,15 +14,12 @@ export default class TabsView extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: "#777",
-      width: "300px"
-    };
-
     return (
-      <div>
+      <div className="tabs-view">
         {this.state.activeTabs.map(tab => {
-          return <p> {tab.name} </p>;
+          return (
+            <Tab tab={tab}></Tab>
+          );
         })}
       </div>
     );

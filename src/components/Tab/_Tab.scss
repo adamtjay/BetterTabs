@@ -1,0 +1,42 @@
+.tab-row {
+  text-align: center;
+  width: 60%;
+  margin-bottom: 10px;
+
+  & .tab {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 25px;
+    font-size: 1.15rem;
+    border-radius: 5px;
+    background-image: linear-gradient(
+      to right,
+      #454545 0%,
+      #575656 51%,
+      #6e6d6d 100%
+    );
+    color: #fff;
+    cursor: pointer;
+    background-size: 200% auto;
+    transition: 0.5s;
+
+    &:hover {
+      background-position: right center;
+    }
+    &:active {
+      animation: background-size 1.5s;
+    }
+
+    & .tab-icon {
+      width: 30px;
+      height: 30px;
+      padding-right: 15px;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
