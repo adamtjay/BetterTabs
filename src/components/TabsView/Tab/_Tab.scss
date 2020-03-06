@@ -7,6 +7,16 @@
   justify-content: flex-start;
   align-items: center;
 
+  & .tab-active-marker {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(6, 88, 116);
+    background-blend-mode: multiply, multiply;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-2rem);
+  }
+
   & .tab {
     @include flex-row;
     justify-content: flex-start;
@@ -31,17 +41,19 @@
     &.tab-active {
       background-image: linear-gradient(
         to right,
-        #636262 0,
-        #999898 51%,
-        #918f8f 100%
+        #616060 0%,
+        #616060 51%,
+        #9c9b9b 100%
       );
     }
 
     &:hover {
       background-position: right center;
+      transform: translateY(-3px);
     }
     &:active {
       animation: background-size 1.5s;
+      transform: translateY(-1px);
     }
 
     & .tab-icon {

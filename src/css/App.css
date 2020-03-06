@@ -11,7 +11,7 @@ body {
   align-items: center;
   overflow-y: scroll;
   padding: 15px;
-  background-image: linear-gradient(to right, #fcfcfc, #c9c7c7);
+  background-image: linear-gradient(to right, #a9d5f3, #c9c7c7);
   color: #454545; }
 
 .tabs-view {
@@ -30,6 +30,14 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center; }
+  .tab-row .tab-active-marker {
+    width: 15px;
+    height: 15px;
+    background-color: #065874;
+    background-blend-mode: multiply, multiply;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-2rem); }
   .tab-row .tab {
     display: flex;
     flex-direction: row;
@@ -47,11 +55,13 @@ body {
     background-size: 200% auto;
     transition: 0.5s; }
     .tab-row .tab.tab-active {
-      background-image: linear-gradient(to right, #636262 0, #999898 51%, #918f8f 100%); }
+      background-image: linear-gradient(to right, #616060 0%, #616060 51%, #9c9b9b 100%); }
     .tab-row .tab:hover {
-      background-position: right center; }
+      background-position: right center;
+      transform: translateY(-3px); }
     .tab-row .tab:active {
-      animation: background-size 1.5s; }
+      animation: background-size 1.5s;
+      transform: translateY(-1px); }
     .tab-row .tab .tab-icon {
       width: 30px;
       height: 30px;

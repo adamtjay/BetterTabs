@@ -10,9 +10,10 @@ export default class MainWindow extends Component {
 
   getCurrentTabs() {
     let queriedTabs = [];
-    chrome.tabs.query({}, tabs => {
+    chrome.tabs.query({ currentWindow: true }, tabs => {
       tabs.forEach(tab => {
         let tabObject = {
+          id: tab.id,
           name: tab.title,
           active: tab.active,
           pinned: tab.pinned,
@@ -22,7 +23,7 @@ export default class MainWindow extends Component {
         };
         queriedTabs.push(tabObject);
       });
-      // Sort descending
+      // Sort by newest
       queriedTabs.sort((a, b) => {
         return -1;
       });
