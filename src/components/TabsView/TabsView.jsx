@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Tab from '../Tab/Tab';
+import Tab from './Tab/Tab';
 
 export default class TabsView extends Component {
   state = {

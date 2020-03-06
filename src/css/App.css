@@ -18,17 +18,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(0.5rem);
   padding: 10px; }
 
 .tab-row {
   text-align: center;
-  width: 60%;
-  margin-bottom: 10px; }
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
   .tab-row .tab {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
     width: 100%;
     margin: 0 auto;
     padding: 15px 25px;
@@ -50,3 +56,15 @@ body {
       text-indent: 100%;
       white-space: nowrap;
       overflow: hidden; }
+      .tab-row .tab .tab-icon img {
+        width: 30px;
+        height: 30px;
+        float: left; }
+    .tab-row .tab .tab-content {
+      flex: 2; }
+
+.tab-options {
+  margin-left: 1rem;
+  width: 100px;
+  height: auto;
+  cursor: pointer; }

@@ -30,7 +30,6 @@ export default class MainWindow extends Component {
         tabsList: storedTabs
       }));
     });
-    // return storedTabs;
   }
 
   componentDidMount() {
@@ -41,7 +40,7 @@ export default class MainWindow extends Component {
   render() {
     return (
       <div className="main-window">
-        <h1 style={{ fontSize: "30px" }}>TabViewer</h1>
+        <h1 style={{ fontSize: "30px" }}>BetterTabs</h1>
         <TabsView tabsList={this.state.tabsList}></TabsView>
       </div>
     );
