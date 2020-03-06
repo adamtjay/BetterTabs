@@ -4,7 +4,7 @@ import TabOptions from "./TabOptions/TabOptions";
 export default function Tab(props) {
   return (
     <div className="tab-row">
-      <button className="tab">
+      <button className={"tab" + (props.tab.active ? " tab-active" : "")}>
         <div className="tab-icon">
           {props.tab.icon ? (
             <img src={props.tab.icon} alt={props.tab.name} />

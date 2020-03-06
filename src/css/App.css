@@ -40,11 +40,14 @@ body {
     padding: 15px 25px;
     font-size: 1.15rem;
     border-radius: 5px;
-    background-image: linear-gradient(to right, #454545 0%, #575656 51%, #6e6d6d 100%);
+    background-image: linear-gradient(to right, #454545 0%, #616060 51%, #9c9b9b 100%);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     color: #fff;
     cursor: pointer;
     background-size: 200% auto;
     transition: 0.5s; }
+    .tab-row .tab.tab-active {
+      background-image: linear-gradient(to right, #636262 0, #999898 51%, #918f8f 100%); }
     .tab-row .tab:hover {
       background-position: right center; }
     .tab-row .tab:active {

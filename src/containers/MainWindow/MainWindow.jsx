@@ -9,7 +9,7 @@ export default class MainWindow extends Component {
   };
 
   getCurrentTabs() {
-    let tabsManaged = [];
+    let queriedTabs = [];
     chrome.tabs.query({}, tabs => {
       tabs.forEach(tab => {
         let tabObject = {
@@ -20,11 +20,20 @@ export default class MainWindow extends Component {
           icon: tab.favIconUrl,
           url: tab.url
         };
-        tabsManaged.push(tabObject);
+        queriedTabs.push(tabObject);
       });
-      localStorage.setItem("tabsManaged", JSON.stringify(tabsManaged));
+      // Sort descending
+      queriedTabs.sort((a, b) => {
+        return -1;
+      });
+      // Bring Active tab to top
+      queriedTabs.sort((a, b) => {
+        return a.active ? -1 : 0;
+      });
+
+      localStorage.setItem("tabsManaged", JSON.stringify(queriedTabs));
       let storedTabs = JSON.parse(localStorage.getItem("tabsManaged"));
-      console.log("localStorage: ", typeof storedTabs, storedTabs);
+      console.log("localStorage: ", storedTabs);
 
       this.setState((prevState, props) => ({
         tabsList: storedTabs
@@ -33,7 +42,6 @@ export default class MainWindow extends Component {
   }
 
   componentDidMount() {
-    console.log("component mounted");
     this.getCurrentTabs();
   }
 
