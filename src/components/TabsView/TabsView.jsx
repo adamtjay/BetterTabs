@@ -40,11 +40,16 @@ export default class TabsView extends Component {
         tabsList: storedTabs
       }));
     });
-  }
+  };
 
   componentDidMount() {
     this.getCurrentTabs();
-    // setInterval(() => this.getCurrentTabs(), 2000)  
+    chrome.sessions.getRecentlyClosed({}, sessions => {
+      console.log("sessions: ", sessions);
+      for (let session of sessions) {
+        console.log(session.tab.title);
+      }
+    });
   }
 
   render() {
@@ -52,12 +57,9 @@ export default class TabsView extends Component {
       <div className="tabs-view">
         {this.state.tabsList.map(tab => {
           return (
-            <div className="tab-row">
+            <div className={"tab-row" + (tab.active ? " tab-active" : "")}>
               <Tab tab={tab} />
-              <TabOptions
-                tab={tab}
-                getCurrentTabs={this.getCurrentTabs}
-              />
+              <TabOptions tab={tab} getCurrentTabs={this.getCurrentTabs} />
             </div>
           );
         })}

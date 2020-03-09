@@ -1,17 +1,19 @@
 .tab-options {
+  flex: 0;
   margin-left: 1rem;
   width: 100px;
   height: auto;
   cursor: pointer;
   @include flex-row;
-  justify-content: center;
+  justify-content: flex-start;
+  color: #7a7a7a;
   transition: color 0.5s;
 
-  .icon-close, .icon-bookmark {
-    padding-left: 30px;
+  .icon-close {
+    padding-left: 10px;
 
     &:hover {
-      color: #6e6d6d;
+      color: #454545;
     }
   }
 }

@@ -1,5 +1,5 @@
 /*global chrome*/
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Tab(props) {
   function openTab(id) {
@@ -7,8 +7,6 @@ export default function Tab(props) {
   }
 
   return (
-    <React.Fragment>
-      {props.tab.active ? <div className="tab-active-marker" /> : <div />}
       <button
         id={props.tab.id}
         className={"tab" + (props.tab.active ? " tab-active" : "")}
@@ -23,6 +21,5 @@ export default function Tab(props) {
         </div>
         <div className="tab-content">{props.tab.name}</div>
       </button>
-    </React.Fragment>
   );
 }

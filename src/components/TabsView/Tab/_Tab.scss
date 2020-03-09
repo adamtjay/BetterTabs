@@ -1,77 +1,56 @@
-.tab-row {
-  text-align: center;
-  width: 85%;
-  max-width: 900px;
-  margin-bottom: 10px;
+.tab {
   @include flex-row;
   justify-content: flex-start;
   align-items: center;
+  width: 55%;
+  padding: 15px 25px;
+  font-size: 1.15rem;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to right,
+    #454545 0%,
+    #616060 51%,
+    #9c9b9b 100%
+  );
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  cursor: pointer;
+  background-size: 200% auto;
+  transition: 0.5s;
 
-  & .tab-active-marker {
-    width: 15px;
-    height: 15px;
-    background-color: #454545;
-    background-blend-mode: multiply, multiply;
-    border-radius: 50%;
-    position: absolute;
-    transform: translateX(-3rem);
-  }
-
-  & .tab {
-    @include flex-row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 15px 25px;
-    font-size: 1.15rem;
-    border-radius: 5px;
+  &.tab-active {
     background-image: linear-gradient(
       to right,
-      #454545 0%,
+      #616060 0%,
       #616060 51%,
       #9c9b9b 100%
     );
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    cursor: pointer;
-    background-size: 200% auto;
-    transition: 0.5s;
+  }
 
-    &.tab-active {
-      background-image: linear-gradient(
-        to right,
-        #616060 0%,
-        #616060 51%,
-        #9c9b9b 100%
-      );
-    }
+  &:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+  }
+  &:active {
+    animation: background-size 1.5s;
+    transform: translateY(-1px);
+  }
 
-    &:hover {
-      background-position: right center;
-      transform: translateY(-3px);
-    }
-    &:active {
-      animation: background-size 1.5s;
-      transform: translateY(-1px);
-    }
+  & .tab-icon {
+    width: 30px;
+    height: 30px;
+    padding-right: 15px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 
-    & .tab-icon {
+    & img {
       width: 30px;
       height: 30px;
-      padding-right: 15px;
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-
-      & img {
-        width: 30px;
-        height: 30px;
-        float: left;
-      }
+      float: left;
     }
-    & .tab-content {
-      flex: 2;
-    }
+  }
+  & .tab-content {
+    flex: 2;
   }
 }

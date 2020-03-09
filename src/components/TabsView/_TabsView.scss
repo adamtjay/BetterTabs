@@ -4,3 +4,17 @@
   transform: translateX(0.5rem);
   padding: 10px;
 }
+
+.tab-row {
+  width: 110vw;
+  text-align: center;
+  margin-bottom: 10px;
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+
+  &.tab-active {
+    background-color: rgba(189, 188, 188, 0.6);
+    padding: 5px 0;
+  }
+}

@@ -1,10 +1,58 @@
 .main-window {
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   @include flex-column;
   align-items: center;
   overflow-y: scroll;
+  overflow-x: hidden;
   padding: 15px;
-  background-image: linear-gradient(to right, #a9d5f3, #c9c7c7);
+  background-image: linear-gradient(to right, #e0dede, #fff);
   color: #454545;
+
+  & .main-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+
+    & .settings-icon {
+      top: 20px;
+      right: 20px;
+      position: absolute;
+      color: #7a7a7a;
+      cursor: pointer;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #454545;
+      }
+    }
+
+    & h1 {
+      font-family: cursive;
+      font-size: 1.7rem;
+      margin: 10px 0 0 0;
+      cursor: default;
+    }
+
+    & .main-options {
+      @include flex-row;
+      width: 200px;
+      justify-content: space-evenly;
+    }
+
+    & h4 {
+      cursor: pointer;
+      padding: 0 10px;
+      color: #aaa9a9;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #707070;
+      }
+    }
+
+    & h4.main-option-selected {
+      color: #302f2f;
+    }
+  }
 }
