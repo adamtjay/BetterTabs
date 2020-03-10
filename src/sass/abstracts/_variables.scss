@@ -1,0 +1,11 @@
+// Fonts 
+$hdr-main-font: 'Montserrat Medium';
+$main-content-font: 'Montserrat Light';
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url(./fonts/Montserrat-Medium.otf);
+}
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url(./fonts/Montserrat-Light.otf);
+}

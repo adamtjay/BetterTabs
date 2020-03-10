@@ -1,5 +1,6 @@
 // Mixins
-@import './mixins/mixins.scss';
+@import './abstracts/variables.scss';
+@import './abstracts/mixins.scss';
 
 // Layout
 @import './layout/base.scss';
