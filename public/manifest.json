@@ -9,7 +9,7 @@
   },
   "icons": { "128": "icon_128.png" },
   "content_security_policy": "script-src 'self' 'sha256-okoHgkV2XspzisgHjM4o43W4+8S/PAbgbzSFhfWsMSI='; object-src 'self'",
-  "permissions": ["sessions", "storage", "tabs", "activeTab"],
+  "permissions": ["sessions", "tabs", "activeTab"],
   "background": {
     "scripts": ["js/background.js"]
   }

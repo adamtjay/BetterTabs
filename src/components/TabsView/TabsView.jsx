@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import Tab from "./Tab/Tab";
 import TabOptions from "./TabOptions/TabOptions";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 
 export default class TabsView extends Component {
   state = {
@@ -19,7 +20,9 @@ export default class TabsView extends Component {
           pinned: tab.pinned,
           windowId: tab.windowId,
           icon: tab.favIconUrl,
-          url: tab.url
+          url: tab.url,
+          audible: tab.audible,
+          discarded: tab.disarded
         };
         queriedTabs.push(tabObject);
       });
@@ -27,17 +30,9 @@ export default class TabsView extends Component {
       queriedTabs.sort((a, b) => {
         return -1;
       });
-      // Bring Active tab to top
-      // queriedTabs.sort((a, b) => {
-      //   return a.active ? -1 : 0;
-      // });
-
-      localStorage.setItem("tabsManaged", JSON.stringify(queriedTabs));
-      let storedTabs = JSON.parse(localStorage.getItem("tabsManaged"));
-      console.log("localStorage: ", storedTabs);
 
       this.setState((prevState, props) => ({
-        tabsList: storedTabs
+        tabsList: queriedTabs
       }));
     });
   };
@@ -58,6 +53,7 @@ export default class TabsView extends Component {
         {this.state.tabsList.map(tab => {
           return (
             <div className={"tab-row" + (tab.active ? " tab-active" : "")}>
+              {tab.audible ? <VolumeUpIcon className="audible-icon" /> : ""}
               <Tab tab={tab} />
               <TabOptions tab={tab} getCurrentTabs={this.getCurrentTabs} />
             </div>

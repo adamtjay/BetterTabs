@@ -13,6 +13,11 @@
   justify-content: center;
   align-items: center;
 
+  & .audible-icon {
+    margin-left: -24px;
+    transform: translateX(-2rem);
+  }
+
   &.tab-active {
     background-color: rgba(207, 207, 207, 0.8);
     padding: 10px 0;

@@ -34,7 +34,7 @@ body {
     .main-window .main-header .main-settings-icon,
     .main-window .main-header .new-tab-icon,
     .main-window .main-header .main-close-icon {
-      top: 20px;
+      top: 10px;
       position: absolute;
       color: #7a7a7a;
       cursor: pointer;
@@ -44,11 +44,11 @@ body {
       .main-window .main-header .main-close-icon:hover {
         color: #454545; }
     .main-window .main-header .main-settings-icon {
-      left: 20px; }
+      left: 15px; }
     .main-window .main-header .new-tab-icon {
-      right: 50px; }
+      right: 55px; }
     .main-window .main-header .main-close-icon {
-      right: 20px; }
+      right: 15px; }
     .main-window .main-header h1 {
       font-family: "Montserrat Medium";
       font-size: 1.7rem;
@@ -85,6 +85,9 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center; }
+  .tab-row .audible-icon {
+    margin-left: -24px;
+    transform: translateX(-2rem); }
   .tab-row.tab-active {
     background-color: rgba(207, 207, 207, 0.8);
     padding: 10px 0;
