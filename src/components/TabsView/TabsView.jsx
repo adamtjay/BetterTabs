@@ -6,7 +6,8 @@ import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 
 export default class TabsView extends Component {
   state = {
-    tabsList: []
+    tabsList: [],
+    showTabs: 'active'
   };
 
   getCurrentTabs = () => {
@@ -50,15 +51,17 @@ export default class TabsView extends Component {
   render() {
     return (
       <div className="tabs-view">
-        {this.state.tabsList.map(tab => {
-          return (
-            <div className={"tab-row" + (tab.active ? " tab-active" : "")}>
-              {tab.audible ? <VolumeUpIcon className="audible-icon" /> : ""}
-              <Tab tab={tab} />
-              <TabOptions tab={tab} getCurrentTabs={this.getCurrentTabs} />
-            </div>
-          );
-        })}
+        {this.state.showTabs === 'active'
+          ? this.state.tabsList.map(tab => {
+              return (
+                <div className={"tab-row" + (tab.active ? " tab-active" : "")}>
+                  {tab.audible ? <VolumeUpIcon className="audible-icon" /> : ""}
+                  <Tab tab={tab} />
+                  <TabOptions tab={tab} getCurrentTabs={this.getCurrentTabs} />
+                </div>
+              );
+            })
+          : ""}
       </div>
     );
   }
