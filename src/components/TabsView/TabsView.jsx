@@ -7,7 +7,7 @@ import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 export default class TabsView extends Component {
   state = {
     tabsList: [],
-    showTabs: 'active'
+    recentlyClosed: []
   };
 
   getCurrentTabs = () => {
@@ -38,26 +38,50 @@ export default class TabsView extends Component {
     });
   };
 
+  getRecentlyClosed = () => {
+    chrome.sessions.getRecentlyClosed({}, sessions => {
+      let sessionTabs = [];
+      sessions.forEach(session => {
+        let sessionObject = {
+          id: session.tab.id,
+          name: session.tab.title,
+          windowId: session.tab.windowId,
+          icon: session.tab.favIconUrl,
+          url: session.tab.url
+        };
+        sessionTabs.push(sessionObject);
+      });
+
+      this.setState((prevState, props) => ({
+        recentlyClosed: sessionTabs
+      }));
+    });
+  };
+
   componentDidMount() {
     this.getCurrentTabs();
-    chrome.sessions.getRecentlyClosed({}, sessions => {
-      console.log("sessions: ", sessions);
-      for (let session of sessions) {
-        console.log(session.tab.title);
-      }
-    });
+    this.getRecentlyClosed();
   }
 
   render() {
     return (
       <div className="tabs-view">
-        {this.state.showTabs === 'active'
+        {this.props.tabsType === "active"
           ? this.state.tabsList.map(tab => {
               return (
                 <div className={"tab-row" + (tab.active ? " tab-active" : "")}>
                   {tab.audible ? <VolumeUpIcon className="audible-icon" /> : ""}
                   <Tab tab={tab} />
                   <TabOptions tab={tab} getCurrentTabs={this.getCurrentTabs} />
+                </div>
+              );
+            })
+          : ""}
+        {this.props.tabsType === "recent"
+          ? this.state.recentlyClosed.map(tab => {
+              return (
+                <div className="tab-row recently-closed">
+                  <Tab tab={tab} tabType={this.props.tabsType} />
                 </div>
               );
             })

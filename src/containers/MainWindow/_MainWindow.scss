@@ -3,10 +3,8 @@
   height: 100%;
   @include flex-column;
   align-items: center;
-  // overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 15px;
-  // background-image: linear-gradient(to bottom right,#87eef7,#fff);
   background-image: linear-gradient(to bottom, #fff, #fcfcfc);
   color: #454545;
 
@@ -31,6 +29,7 @@
     }
 
     & .main-settings-icon {
+      display: none;
       left: 15px;
     }
 

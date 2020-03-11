@@ -7,18 +7,25 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import AddIcon from "@material-ui/icons/Add";
 
 export default class MainWindow extends Component {
-   createTab = () => {
+  state = {
+    tabsType: "active"
+  };
+
+  createTab = () => {
     chrome.tabs.create({}, () => {});
-   }
+  };
+
+  switchTabsType = newType => {
+    this.setState({
+      tabsType: newType
+    });
+  };
 
   render() {
     return (
       <div className="main-window">
         <div className="main-header">
-          <AddIcon 
-          className="new-tab-icon"
-          onClick={() => this.createTab()}
-          />
+          <AddIcon className="new-tab-icon" onClick={() => this.createTab()} />
           <SettingsIcon className="main-settings-icon" />
           <CloseIcon
             onClick={() => window.close()}
@@ -26,11 +33,25 @@ export default class MainWindow extends Component {
           />
           <h1>BetterTabs</h1>
           <div className="main-options">
-            <h4 className="main-option-selected">Active</h4>
-            <h4>Recently Closed</h4>
+            <h4
+              onClick={() => this.switchTabsType("active")}
+              className={
+                this.state.tabsType === "active" ? "main-option-selected" : ""
+              }
+            >
+              Active
+            </h4>
+            <h4
+              onClick={() => this.switchTabsType("recent")}
+              className={
+                this.state.tabsType === "recent" ? "main-option-selected" : ""
+              }
+            >
+              Recently Closed
+            </h4>
           </div>
         </div>
-        <TabsView></TabsView>
+        <TabsView tabsType={this.state.tabsType}></TabsView>
       </div>
     );
   }
