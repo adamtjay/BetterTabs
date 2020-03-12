@@ -1,5 +1,6 @@
 /*global chrome*/
 import React from "react";
+import Tooltip from "@material-ui/core/Tooltip";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 export default function TabOptions(props) {
@@ -23,10 +24,12 @@ export default function TabOptions(props) {
 
   return (
     <div className="tab-options">
-      <HighlightOffIcon
-        className="icon-close"
-        onClick={() => closeTab(props.tab.id)}
-      />
+      <Tooltip title="Close Tab">
+        <HighlightOffIcon
+          className="icon-close"
+          onClick={() => closeTab(props.tab.id)}
+        />
+      </Tooltip>
     </div>
   );
 }
