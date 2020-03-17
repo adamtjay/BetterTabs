@@ -7,7 +7,7 @@ export default function TabOptions(props) {
   function closeTab(id) {
     chrome.tabs.remove(id, () => {
       // query X times to account for varying times in closing tabs
-      setIntervalX(() => props.getCurrentTabs(), 100, 3);
+      setIntervalX(() => props.getCurrentTabs(), 100, 5);
     });
   }
 

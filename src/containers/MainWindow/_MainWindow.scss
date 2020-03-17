@@ -41,11 +41,38 @@
       right: 15px;
     }
 
-    & h1 {
-      font-family: $hdr-main-font;
-      font-size: 1.7rem;
-      margin: 10px 0 0 0;
-      cursor: default;
+    & .main-logo {
+      @include flex-row;
+      justify-content: center;
+      margin-left: 30px;
+
+      & h1 {
+        font-family: $hdr-main-font;
+        font-size: 1.7rem;
+        margin: 10px 0 0 0;
+        cursor: default;
+        color: #454545;
+        transition: color 1s;
+
+        &:hover {
+          color: #000;
+        }
+      }
+
+      & span {
+        font-weight: 600;
+      }
+
+      & svg {
+        margin-top: 10px;
+        margin-left: 5px;
+        color: #8e8d8d;
+        transition: color 1s;
+
+        &:hover {
+          color: #454545;
+        }
+      }
     }
 
     & .main-options {
@@ -56,6 +83,7 @@
     }
 
     & h4 {
+      font-size: 0.8rem;
       cursor: pointer;
       padding: 0 10px;
       color: #aaa9a9;

@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "BetterTabs",
+  "author": "Adam Julier",
   "description": "Helps you view & manage your tabs more easily.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "BetterTabs"
   },
-  "icons": { "128": "icon_128.png" },
+  "icons": { "128": "icon.png" },
   "content_security_policy": "script-src 'self' 'sha256-okoHgkV2XspzisgHjM4o43W4+8S/PAbgbzSFhfWsMSI='; object-src 'self'",
   "permissions": ["sessions", "tabs", "activeTab"],
   "background": {

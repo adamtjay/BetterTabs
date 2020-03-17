@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "../../css/App.css";
 import TabsView from "../../components/TabsView/TabsView";
 import Tooltip from "@material-ui/core/Tooltip";
+import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from "@material-ui/icons/Close";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AddIcon from "@material-ui/icons/Add";
@@ -41,7 +42,10 @@ export default class MainWindow extends Component {
               className="main-close-icon"
             />
           </Tooltip>
-          <h1>BetterTabs</h1>
+          <div className="main-logo">
+            <h1>Better<span>Tabs</span></h1>
+            <MenuIcon fontSize="large" />
+          </div>
           <div className="main-options">
             <h4
               onClick={() => this.switchTabsType("active")}

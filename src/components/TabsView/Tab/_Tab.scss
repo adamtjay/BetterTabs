@@ -6,12 +6,7 @@
   padding: 15px 25px;
   font-size: 1.15rem;
   border-radius: 5px;
-  background-image: linear-gradient(
-    to right,
-    #454545 0%,
-    #616060 51%,
-    #9c9b9b 100%
-  );
+  background-image: linear-gradient(90deg, #676767 0, #616060 51%, #9c9b9b);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   color: #fff;
   cursor: pointer;
@@ -52,5 +47,13 @@
   }
   & .tab-content {
     flex: 2;
+  }
+}
+
+.recently-closed {
+  padding-right: calc(34px + 1rem);
+  & .tab {
+    opacity: 0.8;
+    background-image: linear-gradient(90deg, #020202 0, #1d1d1d 51%, #454545);
   }
 }

@@ -13,9 +13,18 @@
   justify-content: center;
   align-items: center;
 
-  &.recently-closed {
-    padding-right: calc(34px + 1rem);
-  }
+  // &.recently-closed {
+  //   padding-right: calc(34px + 1rem);
+  //   & .tab {
+  //     opacity: 0.8;
+  //     background-image: linear-gradient(
+  //       to right,
+  //       #454545 0%,
+  //       #414040 51%,
+  //       #7a7979 100%
+  //     );
+  //   }
+  // }
 
   & .audible-icon {
     margin-left: -24px;
