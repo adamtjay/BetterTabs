@@ -18,11 +18,12 @@ export default function Tab(props) {
   return (
     <Tooltip title={domainName} placement="left">
       <button
-        id={props.tab.id}
+        id={props.tab.id ? props.tab.id : ""}
         className={"tab" + (props.tab.active ? " tab-active" : "")}
         onClick={() => {
           console.log(props.tabType);
-          props.tabType === "active"
+          // If tab.id exists: active tab, else: recently closed tab
+          props.tab.id
             ? openTab(props.tab.id)
             : createTabWithUrl(props.tab.url);
         }}

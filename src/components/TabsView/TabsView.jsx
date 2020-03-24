@@ -42,14 +42,15 @@ export default class TabsView extends Component {
     chrome.sessions.getRecentlyClosed({}, sessions => {
       let sessionTabs = [];
       sessions.forEach(session => {
-        let sessionObject = {
-          id: session.tab.id,
-          name: session.tab.title,
-          windowId: session.tab.windowId,
-          icon: session.tab.favIconUrl,
-          url: session.tab.url
-        };
-        sessionTabs.push(sessionObject);
+        if (!session.window) {
+          let sessionObject = {
+            name: session.tab.title,
+            windowId: session.tab.windowId,
+            icon: session.tab.favIconUrl,
+            url: session.tab.url
+          };
+          sessionTabs.push(sessionObject);
+        }
       });
 
       this.setState((prevState, props) => ({
