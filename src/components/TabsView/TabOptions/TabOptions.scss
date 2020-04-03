@@ -9,11 +9,16 @@
   color: #7a7a7a;
   transition: color 0.5s;
 
-  .icon-close {
-    padding-left: 10px;
-
+  .icon-close,
+  .icon-pin {
     &:hover {
       color: #454545;
     }
+  }
+  .icon-close {
+    padding-left: 10px;
+  }
+  .icon-pin {
+    padding-left: 20px;
   }
 }

@@ -166,7 +166,10 @@ body {
   justify-content: flex-start;
   color: #7a7a7a;
   transition: color 0.5s; }
+  .tab-options .icon-close:hover,
+  .tab-options .icon-pin:hover {
+    color: #454545; }
   .tab-options .icon-close {
     padding-left: 10px; }
-    .tab-options .icon-close:hover {
-      color: #454545; }
+  .tab-options .icon-pin {
+    padding-left: 20px; }
