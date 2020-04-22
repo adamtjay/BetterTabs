@@ -51,7 +51,7 @@
 }
 
 .recently-closed {
-  padding-right: calc(34px + 1rem);
+  padding-right: calc(34px + 1.1rem);
   & .tab {
     opacity: 0.8;
     background-image: linear-gradient(90deg, #020202 0, #1d1d1d 51%, #454545);

@@ -3,7 +3,7 @@
   "name": "BetterTabs",
   "author": "Adam Julier",
   "description": "Helps you view & manage your tabs more easily.",
-  "version": "1.1",
+  "version": "1.2",
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "BetterTabs"
